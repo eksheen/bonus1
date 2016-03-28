@@ -3,6 +3,28 @@
   And anything elese you add to the application, for that matter.
 */
 
+/* my added dropdown */
+
+#dropdownContent {
+ list-style: none;
+ font-family: 'Helvetica', sans-serif;
+ background-color: #D1D1D1; 
+}
+
+#dropdownContent a {
+  text-decoration: none;
+  color: black;
+}
+
+#dropdownContent a:visited {
+  text-decoration: underline;
+}
+
+
+/**********************************/
+
+
+
 .flexsearch-wrapper {
   height: auto;
   width: auto;
