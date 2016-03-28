@@ -24,7 +24,7 @@ $.ajaxSetup({
     async: true
 });
 	$(".flexsearch").keyup(function() {
-		$("#dropdown").remove();
+		$("#dropdownContent").remove();
 		var keys = JSON.parse(data.responseText);
 		console.log(keys);
 		//console.log("We just logged the keys");
@@ -42,7 +42,7 @@ $.ajaxSetup({
 			var index = interestsArr[i].toLowerCase().indexOf(input.toLowerCase());
 			if(index === 0) {
 				console.log(index);
-				prefixArr.push(interestsArr);
+				prefixArr.push(interestsArr[i]);
 			}
 		}
 		//add the programming array to the prefix array
@@ -55,9 +55,19 @@ $.ajaxSetup({
 			}
 		}
 		
-
 		console.log(prefixArr);
-
-
+		$(".flexsearch").append("<ul id='dropdownContent'></ul>");
+		if(prefixArr.length > 8) {
+			$("#dropdownContent").remove();
+		}
+		for(var i = 0 ; i < prefixArr.length ; i++) {
+			console.log(prefixArr[i]);
+			var hyperLink = "http://www.google.com/search?q=" + prefixArr[i].replace(" ","+") + ">" + prefixArr[i];
+			$("#dropdownContent").append("<li><a href=" + hyperLink + "</a></li>");
+		}
 	});
+
+	
 })();
+
+
