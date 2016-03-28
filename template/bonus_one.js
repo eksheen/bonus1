@@ -55,13 +55,9 @@ $.ajaxSetup({
 			}
 		}
 		
+
 		console.log(prefixArr);
 
-		
 
 	});
-		
-
-
-
 })();
